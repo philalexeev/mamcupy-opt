@@ -13,7 +13,6 @@ const sourcemaps = require('gulp-sourcemaps');
 const gulpIf = require('gulp-if');
 const newer = require('gulp-newer');
 const imagemin = require('gulp-imagemin');
-const imageminWebp = require('imagemin-webp');
 const svgmin = require('gulp-svgmin');
 const svgstore = require('gulp-svgstore');
 const inject = require('gulp-inject');
@@ -28,7 +27,7 @@ const replace = require('gulp-replace');
 let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 function html() {
-	let svgs = src('src/img/icons/*.svg')
+	let svgs = src('src/icons/*.svg')
 		.pipe(svgmin(function (file) {
 		let prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
@@ -49,6 +48,7 @@ function html() {
 			tags: ["title", "desc"],
 			attributes: ["id", "style", "fill*", "clip*", "stroke*", "mask", "opacity", "width", "height", "transform"]
 		})))
+		.pipe(src('src/icons-no-ch/*.svg'))
 		.pipe(replace("&gt;", ">"))
 		.pipe(svgstore({ inlineSvg: true }));
 

@@ -15,3 +15,59 @@ img {
 	width: 100%;
 	padding: 0 20px;
 }
+
+.btn {
+	display: inline-block;
+	padding: 8px 13px;
+	font-family: 'bebas', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+	color: #fff;
+	border: 2px solid #fff;
+
+	&__request {
+		color: #000;
+		border: none;
+		background-color: #fff;
+	}
+
+	&__request-icon {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		vertical-align: bottom;
+	}
+
+	&__request-text {
+		margin-left: 8px;
+		vertical-align: bottom;
+	}
+}
+
+.heading {
+	margin-bottom: 25px;
+	font-family: 'bebas', sans-serif;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: 700;
+	text-align: center;
+
+	&--black {
+		color: #000;
+	}
+
+	&--white {
+		color: #fff;
+	}
+}
+
+.subheading {
+	margin-bottom: 20px;
+	font-family: 'open_sans', sans-serif;
+	font-weight: 400;
+	color: #4f4f4f;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+}
