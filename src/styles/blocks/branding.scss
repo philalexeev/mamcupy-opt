@@ -1,0 +1,64 @@
+.branding {
+	text-align: center;
+}
+
+.branding__inner {
+	position: relative;
+	padding: 45px 0 95px;
+}
+
+.branding__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background-image: url('../img/block-branding/mashinnaya_vishivka.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 140%;
+	filter: brightness(0.3);
+}
+
+.branding__list {
+	padding: 0 20px;
+	margin-top: -95px;
+	margin-bottom: 20px;
+	list-style: none;
+}
+
+.branding__item {
+	height: 190px;
+}
+
+.branding__item + .branding__item {
+	margin-top: 10px;
+}
+
+.branding__item-image-wrapper {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.branding__item-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(1.05);
+	z-index: -1;
+}
+
+.branding__item-caption {
+	position: absolute;
+	bottom: 20px;
+	left: 8px;
+	font-family: 'bebas', sans-serif;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+}
+
+

@@ -27,9 +27,7 @@ img {
 	border: 2px solid #fff;
 
 	&__request {
-		color: #000;
 		border: none;
-		background-color: #fff;
 	}
 
 	&__request-icon {
@@ -42,6 +40,16 @@ img {
 	&__request-text {
 		margin-left: 8px;
 		vertical-align: bottom;
+	}
+
+	&__request--black {
+		color: #fff;
+		background-color: #000;
+	}
+
+	&__request--white {
+		color: #000;
+		background-color: #fff;
 	}
 }
 
@@ -66,8 +74,15 @@ img {
 	margin-bottom: 20px;
 	font-family: 'open_sans', sans-serif;
 	font-weight: 400;
-	color: #4f4f4f;
 	font-size: 12px;
 	line-height: 16px;
 	text-align: center;
+
+	&--grey {
+		color: #4f4f4f;
+	}
+
+	&--white {
+		color: #fff;
+	}
 }

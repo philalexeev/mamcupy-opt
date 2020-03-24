@@ -1,8 +1,58 @@
 <section class="prod-spb">
 	<div class="container">
 		<h2 class="heading heading--black">Швейное производство в Санкт-Петербурге</h2>
-		<p class="subheading">Мы можем произвести для вас партию любого мерча по нашим базовым лекалам. Для вас мы будем
+		<p class="subheading subheading--grey">Мы можем произвести для вас партию любого мерча по нашим базовым лекалам. Для вас мы будем
 			использовать проверенные материалы, которые мы используем для производства изделий магазинчика "Мам, купи!".</p>
 		<img class="prod-spb__banner" src="img/main/30 products.png" alt="Минимальная партия 30 изделий">
+		<ul class="prod-spb__products">
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/sweetshoti.png",
+					"price": "950",
+					"alt": "Свитшоты"
+				}'></include>
+			</li>
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/futbolki.png",
+					"price": "400",
+					"alt": "Футболки"
+				}'></include>
+			</li>
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/hoodie.png",
+					"price": "1350",
+					"alt": "Худи"
+				}'></include>
+			</li>
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/shopper.png",
+					"price": "180",
+					"alt": "Шоппер"
+				}'></include>
+			</li>
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/poyasnaya_sumka.png",
+					"price": "410",
+					"alt": "Поясная сумка"
+				}'></include>
+			</li>
+			<li class="prod-spb__products-item">
+				<include src="src/pages/components/product.html" locals='{
+					"imgsrc": "img/production/suvenirka.png",
+					"price": "40",
+					"alt": "Сувенирка"
+				}'></include>
+			</li>
+		</ul>
+		<include src="src/pages/components/button-request.html" locals='{
+				"color": "black",
+				"iconname": "flame",
+				"text": "Оформить заявку"
+			}'></include>
+		<p class="prod-spb__bottom-warning">На странице представлены не все изделия, чтобы узнать подробности - оформите заявку</p>
 	</div>
 </section>
