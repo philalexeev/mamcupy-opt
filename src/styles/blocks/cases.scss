@@ -1,0 +1,27 @@
+.cases {
+	padding: 45px 0 30px;
+	text-align: center;
+}
+
+.cases__list {
+	margin-bottom: 30px;
+	line-height: 0;
+	list-style: none;
+}
+
+.cases__item-link {
+	position: relative;
+	display: block;
+	text-decoration: none;
+}
+
+.cases__item-title {
+	position: absolute;
+	right: 30px;
+	bottom: 25px;
+	font-family: 'bebas', sans-serif;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+	color: #fff;
+}
