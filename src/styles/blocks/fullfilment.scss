@@ -1,0 +1,34 @@
+.fullfilment {
+	margin: 25px 0;
+}
+
+.fullfilment .container {
+	font-family: 'open_sans', sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	color: #4f4f4f;
+	text-align: center;
+}
+
+.fullfillment__bg-image {
+	margin-bottom: 15px;
+}
+
+.fullfilment__details,
+.fullfilment__details-list {
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.fullfilment__details:nth-child(3),
+.fullfilment .btn__request {
+	margin-bottom: 20px;
+}
+
+.fullfilment__details-list {
+	padding: 0 12px;
+}
+
+.fullfilment__bottom-warning {
+	opacity: 0.5;
+}
