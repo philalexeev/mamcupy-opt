@@ -1,0 +1,20 @@
+.design {
+	padding: 170px 0 110px;
+	text-align: center;
+	background-image: url('../img/main/design_bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.design .subheading,
+.design .btn {
+	margin-bottom: 30px;
+}
+
+.design__warning {
+	font-family: 'open_sans', sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #825b26;
+}
