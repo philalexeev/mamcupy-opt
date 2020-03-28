@@ -1,0 +1,49 @@
+.footer {
+	padding: 20px 0;
+	background-color: #000;
+}
+
+.footer__top-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.footer__logo {
+	display: block;
+	width: 65px;
+}
+
+.footer__store-link {
+	text-decoration: none;
+}
+
+.footer__socials {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin-bottom: 25px;
+}
+
+.footer__socials-item + .footer__socials-item {
+	margin-left: 22px;
+}
+
+.footer__socials-link {
+	display: block;
+}
+
+.footer__socials-icon {
+	width: 33px;
+	height: 33px;
+	fill: #fff;
+}
+
+.copyright {
+	font-family: 'open_sans', sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+}

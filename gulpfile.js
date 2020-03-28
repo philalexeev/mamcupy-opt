@@ -45,7 +45,7 @@ function html() {
 			removeEmptyDefs: true,
 			removeEmptyLines: true,
 			removeComments: true,
-			tags: ["title", "desc"],
+			tags: ["title", "desc", "defs"],
 			attributes: ["id", "style", "fill*", "clip*", "stroke*", "mask", "opacity", "width", "height", "transform"]
 		})))
 		.pipe(src('src/icons-no-ch/*.svg'))
