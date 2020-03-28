@@ -23,6 +23,8 @@ const webp = require('gulp-webp');
 const cheerio = require('gulp-cheerio');
 const cleanSvg   = require('gulp-cheerio-clean-svg');
 const replace = require('gulp-replace');
+const babel = require("gulp-babel");
+const uglify = require("gulp-uglify");
 
 let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -78,24 +80,28 @@ function css() {
 
 function js() {
 	return src('src/js/main.js')
-    .pipe(webpackStream({
-      output: {
-        filename: 'main.js',
-      },
-			mode: isDev ? 'development' : 'production',
-      module: {
-        rules: [
-          {
-            test: /\.(js)$/,
-            exclude: /(node_modules)/,
-            loader: 'babel-loader',
-            query: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        ]
-      }
-    }))
+    // .pipe(webpackStream({
+    //   output: {
+    //     filename: 'main.js',
+    //   },
+		// 	mode: isDev ? 'development' : 'production',
+    //   module: {
+    //     rules: [
+    //       {
+    //         test: /\.(js)$/,
+    //         exclude: /(node_modules)/,
+    //         loader: 'babel-loader',
+    //         query: {
+    //           presets: ['@babel/preset-env']
+    //         }
+    //       }
+    //     ]
+    //   }
+    // }))
+		.pipe(babel({
+			presets: ['@babel/preset-env']
+		}))
+		.pipe(gulpIf(!isDev, uglify()))
     .pipe(dest('build/js'));
 }
 

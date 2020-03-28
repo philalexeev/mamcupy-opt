@@ -1,6 +1,11 @@
-<section class="form-section">
+<div class="popup-form">
 	<div class="container">
-		<h2 class="heading heading--white">Связаться с нами</h2>
+		<button class="popup-form__btn-close">
+			<svg class="popup-form__btn-close-icon">
+				<use xlink:href="#cross-out-mark"></use>
+			</svg>
+		</button>
+		<h2 class="heading heading--black">Связаться с нами</h2>
 		<form class="form" action="#">
 			<input class="form__input" type="text" placeholder="Имя">
 			<input class="form__input" type="email" placeholder="E-mail">
@@ -22,11 +27,11 @@
 			</div>
 			<textarea class="form__textarea" name="question" id="question" cols="30" rows="10" placeholder="Задать вопрос"></textarea>
 			<div class="form__checkbox-wrapper">
-				<input class="form__checkbox visuallyhidden" type="checkbox" id="checkbox">
-				<label class="form__checkbox-label" for="checkbox">Я согласен на обработку своих персональных данных</label>
+				<input class="form__checkbox visuallyhidden" type="checkbox" id="popup-checkbox">
+				<label class="form__checkbox-label" for="popup-checkbox">Я согласен на обработку своих персональных данных</label>
 			</div>
-			<button class="btn btn__request btn__request--white" type="submit">Отправить</button>
+			<button class="btn btn__request btn__request--black" type="submit">Отправить</button>
 			<span class="form__error">Ошибка! Вы забыли указать телефон</span>
 		</form>
 	</div>
-</section>
+</div>
