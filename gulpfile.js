@@ -100,20 +100,19 @@ function js() {
 }
 
 function imgOpt() {
-  return src(['src/img/**/*.{jpg,jpeg,png,gif,svg}', '!src/img/icons/*.*'])
+  return src('src/img/**/*.{jpg,jpeg,png,gif,svg}')
     .pipe(plumber())
-    .pipe(newer('build/img'))
     .pipe(imagemin([
-        imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 90, progressive: true }),
-        imagemin.optipng({ optimizationLevel: 4 }),
-        imagemin.svgo({
-            plugins: [
-              	{ removeViewBox: false },
-                { cleanupIDs: false },
-                { removeDimensions: true }
-            ]
-        })
+			imagemin.gifsicle({ interlaced: true }),
+			imagemin.mozjpeg({ quality: 90, progressive: true }),
+			imagemin.optipng({ optimizationLevel: 4 }),
+			imagemin.svgo({
+				plugins: [
+					{ removeViewBox: false },
+					{ cleanupIDs: false },
+					{ removeDimensions: true }
+				]
+			})
     ]))
     .pipe(dest('src/img'))
 }
@@ -128,7 +127,7 @@ function webpImg() {
 }
 
 function copyImg() {
-	return src(['src/img/**/*.{jpg,jpeg,png,webp}', '!src/img/icons'])
+	return src(['src/img/**/*.{jpg,jpeg,png,webp,svg}', '!src/img/icons'])
 		.pipe(dest('build/img'));
 }
 

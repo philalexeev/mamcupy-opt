@@ -1,3 +1,7 @@
-import sum from './modules/sum'
+const select = document.querySelector('.form__select');
+const selectOptions = document.querySelector('.form__select-options');
 
-console.log(sum(8, 9));
+select.addEventListener('click', () => {
+	select.classList.toggle('form__select--opened');
+	selectOptions.classList.toggle('form__select-options--visible');
+});
