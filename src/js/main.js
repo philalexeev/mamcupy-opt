@@ -54,6 +54,41 @@ window.onload = () => {
 		document.body.classList.remove('blocked');
 		popupLayout.style.display = 'none';
 		popupForm.style.display = 'none';
-	})
+	});
 
+
+	// Products
+
+	const popupProducts = document.querySelector('.popup-products');
+	const productsLinks = document.querySelectorAll('.prod-spb__products-link');
+	let productType;
+	let productList;
+
+	for ( let link of productsLinks ) {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			productType = link.dataset.product;
+			productList = document.querySelector(`.popup-products__list[data-list=${productType}]`);
+
+			document.body.classList.add('blocked');
+			popupLayout.style.display = 'block';
+			popupProducts.style.display = 'block';
+			productList.style.display = 'flex';
+			if ( window.innerHeight > popupProducts.offsetHeight - 50 ) {
+				popupLayout.style.display = 'flex';
+				popupLayout.style.justifyContent = 'center';
+				popupLayout.style.alignItems = 'center';
+			}
+		})
+	}
+
+	const btnClosePopupProducts = document.querySelector('.popup-products__btn-close');
+
+	btnClosePopupProducts.addEventListener('click', () => {
+		document.body.classList.remove('blocked');
+		popupLayout.style.display = 'none';
+		popupProducts.style.display = 'none';
+		productList.style.display = 'none';
+	});
 };

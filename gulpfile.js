@@ -98,10 +98,13 @@ function js() {
     //     ]
     //   }
     // }))
+		.pipe(plumber())
+		.pipe(gulpIf(isDev, sourcemaps.init()))
 		.pipe(babel({
 			presets: ['@babel/preset-env']
 		}))
 		.pipe(gulpIf(!isDev, uglify()))
+		.pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(dest('build/js'));
 }
 

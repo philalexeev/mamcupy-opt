@@ -1,0 +1,29 @@
+.popup-products {
+	position: relative;
+	display: none;
+	padding: 50px 0 0;
+}
+
+.popup-products__btn-close {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background-color: transparent;
+}
+
+.popup-products__btn-close-icon {
+	width: 24px;
+	height: 24px;
+	fill: #fff;
+}
+
+.popup-products__list {
+	display: none;
+	flex-direction: column;
+	justify-content: start;
+	align-items: stretch;
+	font-size: 0;
+}
