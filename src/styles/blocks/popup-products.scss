@@ -1,10 +1,12 @@
-.popup-products {
+.popup-products,
+.popup-cases {
 	position: relative;
 	display: none;
 	padding: 50px 0 0;
 }
 
-.popup-products__btn-close {
+.popup-products__btn-close,
+.popup-cases__btn-close {
 	position: absolute;
 	top: 13px;
 	right: 13px;
@@ -14,13 +16,15 @@
 	background-color: transparent;
 }
 
-.popup-products__btn-close-icon {
+.popup-products__btn-close-icon,
+.popup-cases__btn-close-icon {
 	width: 24px;
 	height: 24px;
 	fill: #fff;
 }
 
-.popup-products__list {
+.popup-products__list,
+.popup-cases__list {
 	display: none;
 	flex-direction: column;
 	justify-content: start;

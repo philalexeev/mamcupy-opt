@@ -4,9 +4,12 @@
 }
 
 .cases__list {
-	margin-bottom: 30px;
 	line-height: 0;
 	list-style: none;
+}
+
+.cases__item:nth-child(n + 10) {
+	display: none;
 }
 
 .cases__item-link {
@@ -24,4 +27,8 @@
 	font-weight: 600;
 	line-height: 1;
 	color: #fff;
+}
+
+.cases .btn {
+	margin-top: 30px;
 }

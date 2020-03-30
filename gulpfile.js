@@ -136,7 +136,7 @@ function webpImg() {
 }
 
 function copyImg() {
-	return src(['src/img/**/*.{jpg,jpeg,png,webp,svg}', '!src/img/icons'])
+	return src(['src/img/**/*.{jpg,JPG,jpeg,png,webp,svg}', '!src/img/icons'])
 		.pipe(dest('build/img'));
 }
 

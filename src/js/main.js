@@ -93,7 +93,84 @@ window.onload = () => {
 			popupProducts.style.display = 'none';
 			productList.style.display = 'none';
 		});
-	})()
+	})();
+
+	(function casesFunc() {
+		// Cases
+		const popupLayout = document.querySelector('.popup-wrap');
+		const popupCases = document.querySelector('.popup-cases');
+		const casesLinks = document.querySelectorAll('.cases__item-link');
+		let caseName;
+		let productList;
+
+		for (let link of casesLinks) {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				caseName = link.dataset.name;
+				productList = document.querySelector(`.popup-cases__list[data-list=${caseName}]`);
+
+				document.body.classList.add('blocked');
+				popupLayout.style.display = 'block';
+				popupCases.style.display = 'block';
+				productList.style.display = 'flex';
+				if (window.innerHeight > popupCases.offsetHeight) {
+					popupLayout.style.display = 'flex';
+					popupLayout.style.justifyContent = 'center';
+					popupLayout.style.alignItems = 'center';
+				}
+			})
+		}
+
+		const btnClosePopupProducts = document.querySelector('.popup-cases__btn-close');
+
+		btnClosePopupProducts.addEventListener('click', () => {
+			document.body.classList.remove('blocked');
+			popupLayout.style.display = 'none';
+			popupCases.style.display = 'none';
+			productList.style.display = 'none';
+		});
+	})();
+
+	(function showMoreFunc() {
+		const showMoreBtn = document.querySelector('.btn__show-more');
+		const casesList = document.querySelectorAll('.cases__item');
+
+		let hiddenCases = [];
+
+		for ( let caseItem of casesList ) {
+			let caseDisplay = getComputedStyle(caseItem).display;
+
+			if ( caseDisplay === 'none' ) {
+				hiddenCases.push(caseItem);
+			}
+		}
+
+		showMoreBtn.addEventListener('click', () => {
+			// for (let i = 0; i < 3; i++) {
+			// 	console.log(`${i} --- `, hiddenCases[i]);
+			// 	hiddenCases[i].style.display = 'block';
+			// 	hiddenCases.shift();
+
+			// 	if ( !hiddenCases.length ) {
+			// 		showMoreBtn.style.display = 'none';
+			// 		break;
+			// 	}
+			// }
+			let i = 0;
+			while ( i < 3 ) {
+				hiddenCases[0].style.display = 'block';
+				hiddenCases.shift();
+
+				if ( !hiddenCases.length ) {
+					showMoreBtn.style.display = 'none';
+					break;
+				}
+				i++;
+			}
+			i = 0;
+		});
+	})();
 };
 
 
