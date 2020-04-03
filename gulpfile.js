@@ -79,7 +79,7 @@ function css() {
 }
 
 function js() {
-	return src('src/js/main.js')
+	return src('src/js/*.js')
     // .pipe(webpackStream({
     //   output: {
     //     filename: 'main.js',

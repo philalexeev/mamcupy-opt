@@ -20,6 +20,7 @@
 .form__select,
 .form__textarea {
 	width: 100%;
+	min-height: 38px;
 	padding: 10px;
 	margin-bottom: 15px;
 	font-family: 'open_sans', sans-serif;
@@ -29,6 +30,38 @@
 	color: #fff;
 	border: 2px solid #fff;
 	background-color: transparent;
+}
+
+.form__error-field {
+	border-color: #f00;
+}
+
+.form__input-wrapper {
+	position: relative;
+	padding: 0;
+}
+
+.form__input-wrapper::before {
+	content: '+7';
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 600;
+}
+
+.form__input-telephone {
+	width: 100%;
+	padding: 10px 10px 10px 30px;
+	border: none;
+	background-color: transparent;
+	font-family: 'open_sans', sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 600;
+	color: #fff;
 }
 
 .form__select {
@@ -66,6 +99,7 @@
 
 .form__select-option {
 	padding: 15px;
+	min-height: 38px;
 	cursor: pointer;
 
 	&:hover {
@@ -134,6 +168,11 @@
 	font-weight: 600;
 	color: #f00;
 	text-align: center;
+	visibility: hidden;
+
+	&--visible {
+		visibility: visible;
+	}
 }
 
 
