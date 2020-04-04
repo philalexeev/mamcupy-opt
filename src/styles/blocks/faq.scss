@@ -30,22 +30,20 @@
 	flex-shrink: 0;
 	width: 16px;
 	height: 20px;
-	transition: transform 0.5s linear;
+	transition: transform 0.5s ease-in-out;
 }
 
 .faq__answer {
 	font-family: 'open_sans', sans-serif;
 	font-size: 12px;
 	line-height: 18px;
-	height: auto;
-	max-height: 0;
+	height: 0;
 	overflow: hidden;
-	transition: max-height 0.5s linear;
+	transition: height 0.5s ease-in-out;
 }
 
-.faq__item--opened .faq__answer {
+.faq__answer-inner {
 	padding-bottom: 20px;
-	max-height: 400px;
 }
 
 .faq__item--opened .faq__question-icon {

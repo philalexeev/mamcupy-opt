@@ -33,6 +33,14 @@
 	border-color: #000;
 }
 
+.popup-form .form__input-telephone {
+	color: #000;
+}
+
+.popup-form .form__error-field {
+	border-color: #f00;
+}
+
 .popup-form .form__select-arrow {
 	transition: transform 0.2s ease-in, fill 0.1s ease-in;
 	fill: #000;
@@ -67,4 +75,12 @@
 	background-position: center;
 	background-size: contain;
 	z-index: 2;
+}
+
+.popup-form .form__checkbox-label--error {
+	color: #f00;
+}
+
+.popup-form .form__checkbox-label--error::after {
+	border-color: #f00;
 }

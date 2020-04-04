@@ -133,6 +133,10 @@
 	line-height: 18px;
 	font-weight: 600;
 	color: #fff;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .form__checkbox-label::after {
@@ -159,6 +163,14 @@
 	background-position: center;
 	background-size: contain;
 	z-index: 2;
+}
+
+.form__checkbox-label--error {
+	color: #f00;
+}
+
+.form__checkbox-label--error::after {
+	border-color: #f00;
 }
 
 .form__error {

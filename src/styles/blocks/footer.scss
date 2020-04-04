@@ -17,6 +17,12 @@
 
 .footer__store-link {
 	text-decoration: none;
+	transition: color 0.1s ease-in, background-color 0.1s ease-in;
+
+	&:hover {
+		background-color: #fff;
+		color: #000;
+	}
 }
 
 .footer__socials {

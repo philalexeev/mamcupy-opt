@@ -22,6 +22,9 @@ window.onload = () => {
 				if ( option.textContent ) {
 					selectValue.dataset.activeoption = option.dataset.option;
 					selectValue.textContent = option.textContent;
+					if ( selectValue.closest('.form__error-field') ) {
+						selectValue.closest('.form__error-field').classList.remove('form__error-field')
+					}
 				} else {
 					selectValue.dataset.activeoption = option.dataset.option;
 					selectValue.textContent = 'Выберите услугу';
@@ -76,6 +79,7 @@ window.onload = () => {
 		const popupLayout = document.querySelector('.popup-wrap');
 		const popupProducts = document.querySelector('.popup-products');
 		const productsLinks = document.querySelectorAll('.prod-spb__products-link');
+		const productsBtnClose = document.querySelector('.popup-products__btn-close');
 		let productType;
 		let productList;
 
@@ -90,10 +94,12 @@ window.onload = () => {
 				popupLayout.style.display = 'block';
 				popupProducts.style.display = 'block';
 				productList.style.display = 'flex';
+				productsBtnClose.style.position = 'fixed';
 				if (window.innerHeight > popupProducts.offsetHeight) {
 					popupLayout.style.display = 'flex';
 					popupLayout.style.justifyContent = 'center';
 					popupLayout.style.alignItems = 'center';
+					productsBtnClose.style.position = 'absolute';
 				}
 			})
 		}
@@ -144,11 +150,6 @@ window.onload = () => {
 				popupLayout.style.display = 'block';
 				popupCases.style.display = 'block';
 				productList.style.display = 'flex';
-				// if (window.innerHeight > popupCases.offsetHeight) {
-				// 	popupLayout.style.display = 'flex';
-				// 	popupLayout.style.justifyContent = 'center';
-				// 	popupLayout.style.alignItems = 'center';
-				// }
 			})
 		}
 
@@ -200,7 +201,14 @@ window.onload = () => {
 		for ( let item of faqItems ) {
 			item.addEventListener('click', () => {
 
+				let itemAnswer = item.querySelector('.faq__answer-inner');
 				item.classList.toggle('faq__item--opened');
+
+				if ( item.classList.contains('faq__item--opened') ) {
+					itemAnswer.parentElement.style.height = itemAnswer.scrollHeight + 'px';
+				} else {
+					itemAnswer.parentElement.style.height = '0px';
+				}
 
 			})
 		}
@@ -208,10 +216,12 @@ window.onload = () => {
 	})();
 
 	(function telephoneMask() {
-		const maskSelector = document.querySelector(".form__input-telephone");
+		const maskSelectors = document.querySelectorAll(".form__input-telephone");
 
-		let im = new Inputmask("999-999-99-99");
-		im.mask(maskSelector);
+		for ( let maskSelector of maskSelectors ) {
+			let im = new Inputmask("999-999-99-99");
+			im.mask(maskSelector);
+		}
 	})();
 
 	function checkForm(event, form) {
@@ -224,6 +234,7 @@ window.onload = () => {
 		const selectValue = form.querySelector('.form__select-value');
 		const textarea = form.querySelector('.form__textarea');
 		const checkBox = form.querySelector('.form__checkbox');
+		const checkBoxLabel = form.querySelector('.form__checkbox-label');
 
 		const errorMsg = form.querySelector('.form__error');
 
@@ -234,30 +245,43 @@ window.onload = () => {
 		if ( !nameInput.value.trim()) {
 			nameInput.classList.add('form__error-field');
 			sendState = false;
+		} else if ( nameInput.classList.contains('form__error-field') ) {
+			nameInput.classList.remove('form__error-field')
 		}
 
 		if ( !emailRegExp.test(emailInput.value) ) {
 			emailInput.classList.add('form__error-field');
 			sendState = false;
+		} else if ( emailInput.classList.contains('form__error-field') ) {
+			emailInput.classList.remove('form__error-field')
 		}
 
 		if ( !phoneRegExp.test(phoneNumber)) {
 			phoneInput.parentElement.classList.add('form__error-field');
 			sendState = false;
+		} else if ( phoneInput.parentElement.classList.contains('form__error-field') ) {
+			phoneInput.parentElement.classList.remove('form__error-field')
 		}
 
 		if ( parseInt(selectValue.dataset.activeoption, 10) === 0 ) {
 			selectValue.closest('.form__select').classList.add('form__error-field');
 			sendState = false;
+		} else if ( selectValue.closest('.form__select').classList.contains('form__error-field') ) {
+			selectValue.closest('.form__select').classList.remove('form__error-field')
 		}
 
 		if ( !textarea.value ) {
 			textarea.classList.add('form__error-field');
 			sendState = false;
+		} else if ( textarea.classList.contains('form__error-field') ) {
+			textarea.classList.remove('form__error-field');
 		}
 
 		if ( !checkBox.checked ) {
+			checkBoxLabel.classList.add('form__checkbox-label--error');
 			sendState = false;
+		} else if ( checkBoxLabel.classList.contains('form__checkbox-label--error') ) {
+			checkBoxLabel.classList.remove('form__checkbox-label--error')
 		}
 
 		if ( sendState ) {
@@ -269,17 +293,44 @@ window.onload = () => {
 		}
 	};
 
+	(function inputChange() {
+		const inputFields = document.querySelectorAll('.form__input-name, .form__input-email, .form__input-telephone, .form__textarea');
+		const checkboxFields = document.querySelectorAll('.form__checkbox');
+
+		for ( let inputItem of inputFields ) {
+			inputItem.oninput = () => {
+				if ( inputItem.closest('.form__error-field') ) {
+					inputItem.closest('.form__error-field').classList.remove('form__error-field');
+				}
+			}
+		}
+
+		for ( let checkbox of checkboxFields ) {
+			checkbox.onchange = () => {
+				if ( checkbox.nextElementSibling.classList.contains('form__checkbox-label--error') ) {
+					checkbox.nextElementSibling.classList.remove('form__checkbox-label--error');
+				}
+			}
+		}
+	})();
+
 	(function sendFormEvents() {
 
 		const formList = document.forms;
+		console.log(formList);
 
 		for ( let formElem of formList ) {
-			formElem.addEventListener('submit', (event) => {
-				checkForm(event, formElem);
-			}, false);
+			// formElem.addEventListener('submit', (event) => {
+			// 	console.log(1);
+			// 	checkForm(event, formElem);
+			// }, false);
 			formElem.submit = (event) => {
 				checkForm(event, formElem);
 			};
+
+			formElem.querySelector('button[type="submit"]').addEventListener('click', (event) => {
+				checkForm(event, formElem);
+			})
 		}
 
 	})();

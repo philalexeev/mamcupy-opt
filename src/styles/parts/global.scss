@@ -60,6 +60,7 @@ body.blocked {
 
 	&__request {
 		border: none;
+		transition: color 0.1s ease-in, background-color 0.1s ease-in;
 	}
 
 	&__request-icon {
@@ -77,11 +78,23 @@ body.blocked {
 	&__request--black {
 		color: #fff;
 		background-color: #000;
+		border: 2px solid #000;
+
+		&:hover {
+			background-color: transparent;
+			color: #000;
+		}
 	}
 
 	&__request--white {
 		color: #000;
 		background-color: #fff;
+		border: 2px solid #fff;
+
+		&:hover {
+			color: #fff;
+			background-color: transparent;
+		}
 	}
 }
 
