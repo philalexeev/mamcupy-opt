@@ -6,10 +6,43 @@
 .cases__list {
 	line-height: 0;
 	list-style: none;
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+		width: 768px;
+		margin: 0 auto;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 100%;
+	}
+}
+
+.cases__item {
+	overflow: hidden;
+
+	@media screen and (min-width: 768px) {
+		width: 50%;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 25%;
+	}
 }
 
 .cases__item:nth-child(n + 10) {
 	display: none;
+
+	@media screen and (min-width: 768px) {
+		display: block;
+	}
+}
+
+.cases__item:nth-child(n + 13) {
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
 }
 
 .cases__item-link {
@@ -17,6 +50,10 @@
 	display: block;
 	text-decoration: none;
 	padding: 5px 10px;
+
+	@media screen and (min-width: 768px) {
+		padding: 0;
+	}
 }
 
 .cases__item-title {
@@ -29,6 +66,14 @@
 	line-height: 1;
 	color: #fff;
 	z-index: 2;
+
+	@media screen and (min-width: 768px) {
+		font-size: 21px;
+	}
+
+	@media screen and (min-width: 1700px) {
+		font-size: 31px;
+	}
 }
 
 .cases__item-title::before {
