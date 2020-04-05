@@ -5,33 +5,36 @@ window.onload = () => {
 	(function selectFunc() {
 		// Selects
 		const selects = document.querySelectorAll('.form__select');
-		const selectOptions = document.querySelectorAll('.form__select-option');
-		const selectValue = document.querySelector('.form__select-value');
 
 		for (let select of selects) {
 			select.addEventListener('click', () => {
-				let selectOptions = select.querySelector('.form__select-options');
+				let selectList = select.querySelector('.form__select-options');
 
 				select.classList.toggle('form__select--opened');
-				selectOptions.classList.toggle('form__select-options--visible');
+				selectList.classList.toggle('form__select-options--visible');
 			});
-		}
 
-		for (let option of selectOptions) {
-			option.addEventListener('click', () => {
-				if ( option.textContent ) {
-					selectValue.dataset.activeoption = option.dataset.option;
-					selectValue.textContent = option.textContent;
-					if ( selectValue.closest('.form__error-field') ) {
-						selectValue.closest('.form__error-field').classList.remove('form__error-field')
+			const selectOptions = select.querySelectorAll('.form__select-option');
+			const selectValue = select.querySelector('.form__select-value');
+
+			for (let option of selectOptions) {
+				option.addEventListener('click', () => {
+					if ( option.textContent ) {
+						selectValue.dataset.activeoption = option.dataset.option;
+						selectValue.textContent = option.textContent;
+						if ( selectValue.closest('.form__error-field') ) {
+							selectValue.closest('.form__error-field').classList.remove('form__error-field')
+						}
+					} else {
+						selectValue.dataset.activeoption = option.dataset.option;
+						selectValue.textContent = 'Выберите услугу';
 					}
-				} else {
-					selectValue.dataset.activeoption = option.dataset.option;
-					selectValue.textContent = 'Выберите услугу';
-				}
-			})
+				})
+			}
 		}
+	})();
 
+	(function openMenu() {
 		// Menus & menus' buttons
 		const menuBtnOpen = document.querySelector('.header__menu-btn');
 		const menuBtnClose = document.querySelector('.header__menu-btn-close');
@@ -135,6 +138,7 @@ window.onload = () => {
 
 				for (let i = 1; i <= imagesAmount; i++) {
 					let listItem = document.createElement('li');
+					listItem.classList.add('popup-cases__list-item');
 					let imgItem = document.createElement('img');
 
 					imgItem.classList.add('popup-cases__image');
@@ -317,7 +321,6 @@ window.onload = () => {
 	(function sendFormEvents() {
 
 		const formList = document.forms;
-		console.log(formList);
 
 		for ( let formElem of formList ) {
 			// formElem.addEventListener('submit', (event) => {

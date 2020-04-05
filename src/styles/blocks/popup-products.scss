@@ -44,3 +44,13 @@
 .popup-cases__list {
 	display: flex;
 }
+
+.popup-products__list li + li {
+	padding-top: 5px;
+	background-color: #333;
+}
+
+.popup-cases__list-item + .popup-cases__list-item {
+	padding-top: 5px;
+	background-color: #333;
+}
