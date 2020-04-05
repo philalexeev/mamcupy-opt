@@ -5,6 +5,27 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+
+	@media screen and (min-width: 410px) {
+		background-image: url('../img/main/design_bg_tablet.jpg');
+	}
+
+	@media screen and (min-width: 768px) {
+		padding: 160px 0 210px;
+		background-image: url('../img/main/razrabotka_design.jpg');
+		background-position: center 0;
+	}
+}
+
+.design .container {
+	@media screen and (min-width: 768px) {
+		width: 420px;
+		margin: 0 auto;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 450px;
+	}
 }
 
 .design .subheading,
@@ -12,9 +33,20 @@
 	margin-bottom: 30px;
 }
 
+.design .subheading {
+	@media screen and (min-width: 768px) {
+		width: auto;
+		margin: 0 auto 30px;
+	}
+}
+
 .design__warning {
 	font-family: 'open_sans', sans-serif;
 	font-size: 12px;
 	line-height: 18px;
 	color: #825b26;
+
+	@media screen and (min-width: 768px) {
+		font-size: 13px;
+	}
 }

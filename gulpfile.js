@@ -71,7 +71,9 @@ function css() {
     .pipe(plumber())
     .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(sass())
-    .pipe(postcss([ autoprefixer(), mqpacker() ]))
+    .pipe(postcss([ autoprefixer(), mqpacker({
+			sort: true
+		}) ]))
     .pipe(gulpIf(!isDev, csso()))
     .pipe(gulpIf(isDev, sourcemaps.write()))
     .pipe(dest('build/css'))

@@ -2,11 +2,11 @@
 	padding: 50px 0 40px;
 	text-align: center;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		padding: 50px 0 85px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		position: relative;
 		width: 1200px;
 		margin: 0 auto;
@@ -18,11 +18,11 @@
 	width: 150px;
 	margin-bottom: 35px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 210px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		position: absolute;
 		top: 90px;
 		left: 30px;
@@ -35,7 +35,7 @@
 	list-style: none;
 	padding: 0 20px 30px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -45,18 +45,18 @@
 		padding: 0;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 100%;
 		padding-bottom: 15px;
 	}
 }
 
 .prod-spb__products-item {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		margin-bottom: 60px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		margin-bottom: 45px;
 	}
 }
@@ -64,7 +64,7 @@
 .prod-spb__products-item + .prod-spb__products-item {
 	margin-top: 40px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		margin-top: 0;
 	}
 }
@@ -82,12 +82,12 @@
 	margin-bottom: 20px;
 	background-color: #e9e9e9;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 344px;
 		height: 300px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 360px;
 		height: 324px;
 	}
@@ -151,37 +151,37 @@
 }
 
 .prod-spb__products-item:nth-child(1) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 1;
 	}
 }
 
 .prod-spb__products-item:nth-child(2) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 2;
 	}
 }
 
 .prod-spb__products-item:nth-child(3) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 3;
 	}
 }
 
 .prod-spb__products-item:nth-child(4) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 5;
 	}
 }
 
 .prod-spb__products-item:nth-child(5) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 4;
 	}
 }
 
 .prod-spb__products-item:nth-child(6) {
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		order: 6;
 	}
 }
@@ -191,12 +191,12 @@
 	top: -10px;
 	left: -10px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 320px;
 		top: -15px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 345px;
 		left: -54px;
 	}
@@ -207,14 +207,14 @@
 	top: -10px;
 	left: -10px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 300px;
 		left: auto;
 		right: -17px;
 		top: -40px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 320px;
 		right: -7px;
 		top: -45px;
@@ -225,12 +225,12 @@
 	width: 200px;
 	top: -25px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 284px;
 		top: -28px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 307px;
 		top: -30px;
 	}
@@ -240,11 +240,11 @@
 	width: 150px;
 	top: -20px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 200px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 213px;
 	}
 }
@@ -253,11 +253,11 @@
 	width: 210px;
 	top: 40px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 300px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 340px;
 		top: 50px;
 		left: -30px;
@@ -269,12 +269,12 @@
 	top: -15px;
 	left: -10px;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 270px;
 		left: -30px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		width: 290px;
 	}
 }
@@ -289,7 +289,7 @@
 	line-height: 20px;
 	color: #4f4f4f;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		bottom: 20px;
 		right: 20px;
 		font-size: 26px;
@@ -304,7 +304,7 @@
 	line-height: 21px;
 	color: #000;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		font-size: 31px;
 		line-height: 31px;
 	}
@@ -323,13 +323,13 @@
 	color: #4f4f4f;
 	opacity: 0.5;
 
-	@media (min-width: 768px) {
+	@media screen and (min-width: 768px) {
 		width: 310px;
 		margin: 0 auto;
 		font-size: 13px;
 	}
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		position: absolute;
 		top: 50%;
 		left: 100%;
@@ -342,7 +342,7 @@
 .prod-spb .btn__request {
 	margin-bottom: 20px;
 
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		margin-bottom: 0;
 	}
 }
