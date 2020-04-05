@@ -1,63 +1,71 @@
 <header class="header">
-  <div class="header__inner container">
-		<div class="header__links">
-			<a class="header__logo" href="https://mamcupy.com/" target="_blank">Сайт Мамкупи</a>
-			<button class="header__menu-btn">
-				Ссылки/Телефон
-				<svg class="header__menu-icon">
-					<use xlink:href="#menu"></use>
-				</svg>
-			</button>
-			<div class="header__menu">
-				<button class="header__menu-btn-close">
-					<svg class="header__menu-btn-close-icon">
-						<use xlink:href="#cross-out-mark"></use>
-					</svg>
-				</button>
-				<ul class="header__socials">
-					<li class="header__socials-item">
-						<a class="header__socials-link" href="https://twitter.com/mamcupy">
-							<svg class="header__socials-icon header__icon-twitter">
-								<use xlink:href="#twitter"></use>
+	<div class="header__wrapper">
+		<div class="header__right-block">
+			<div class="header__inner container">
+				<div class="header__links">
+					<a class="header__logo" href="https://mamcupy.com/" target="_blank">Сайт Мамкупи</a>
+					<button class="header__menu-btn">
+						Ссылки/Телефон
+						<svg class="header__menu-icon">
+							<use xlink:href="#menu"></use>
+						</svg>
+					</button>
+					<div class="header__menu">
+						<button class="header__menu-btn-close">
+							<svg class="header__menu-btn-close-icon">
+								<use xlink:href="#cross-out-mark"></use>
 							</svg>
-						</a>
-					</li>
-					<li class="header__socials-item">
-						<a class="header__socials-link" href="https://www.instagram.com/mamcupy/">
-							<svg class="header__socials-icon header__icon-instagram">
-								<use xlink:href="#instagram"></use>
-							</svg>
-						</a>
-					</li>
-					<li class="header__socials-item">
-						<a class="header__socials-link" href="https://vk.com/mam_cupy">
-							<svg class="header__socials-icon header__icon-vk">
-								<use xlink:href="#vk"></use>
-							</svg>
-						</a>
-					</li>
-					<li class="header__socials-item">
-						<a class="header__socials-link" href="https://t-do.ru/mamcupy">
-							<svg class="header__socials-icon header__icon-telegram">
-								<use xlink:href="#telegram"></use>
-							</svg>
-						</a>
-					</li>
-				</ul>
-				<a class="header__menu-tel" href="tel:+79658135846">+7-965-813-58-46</a>
-			</div>
-		</div>
-		<div class="header__title">
-			<h1 class="header__heading">Мам, купи!</h1>
-			<p class="header__text-about">Мам, купи! - интернет-магазин одежды и сувенирной продукции с собственным производством. Мы разрабатываем и реализуем мерч крупных блогеров и артистов.</p>
-		</div>
-		<div class="header__btns">
-			<include src="src/pages/components/button-request.html" locals='{
+						</button>
+						<ul class="header__socials">
+							<li class="header__socials-item">
+								<a class="header__socials-link" href="https://twitter.com/mamcupy">
+									<svg class="header__socials-icon header__icon-twitter">
+										<use xlink:href="#twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="header__socials-item">
+								<a class="header__socials-link" href="https://www.instagram.com/mamcupy/">
+									<svg class="header__socials-icon header__icon-instagram">
+										<use xlink:href="#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="header__socials-item">
+								<a class="header__socials-link" href="https://vk.com/mam_cupy">
+									<svg class="header__socials-icon header__icon-vk">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="header__socials-item">
+								<a class="header__socials-link" href="https://t-do.ru/mamcupy">
+									<svg class="header__socials-icon header__icon-telegram">
+										<use xlink:href="#telegram"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="header__tel-btn-wrapper">
+							<a class="header__menu-tel" href="tel:+79658135846">+7-965-813-58-46</a>
+							<button class="btn btn__request btn__request--black">Оформить заявку</button>
+						</div>
+					</div>
+				</div>
+				<div class="header__title">
+					<h1 class="header__heading">Мам, купи!</h1>
+					<p class="header__text-about">Мам, купи! - интернет-магазин одежды и сувенирной продукции с собственным
+						производством. Мы разрабатываем и реализуем мерч крупных блогеров и артистов.</p>
+				</div>
+				<div class="header__btns">
+					<include src="src/pages/components/button-request.html" locals='{
 				"color": "white",
 				"iconname": "flame",
 				"text": "Оформить заявку"
 			}'></include>
-			<a class="btn header__link-store" href="https://mamcupy.com/" target="_blank">Магазин</a>
+					<a class="btn header__link-store" href="https://mamcupy.com/" target="_blank">Магазин</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>

@@ -1,6 +1,38 @@
 .header {
+	@media (min-width: 768px) {
+		background-image: url('../img/main/banner_1200.jpg');
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+		background-position: 62% center;
+	}
+
+	@media (min-width: 1200px) {
+		background-size: cover;
+	}
+}
+
+.header__wrapper {
+	position: relative;
+	width: 100%;
+
+	@media (min-width: 1200px) {
+		width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+.header__right-block {
 	padding: 8px 0 90px;
 	background-color: #000;
+
+	@media (min-width: 768px) {
+		width: 50%;
+		padding: 25px 0 180px;
+	}
+
+	@media (min-width: 1200px) {
+		padding: 30px 0 220px;
+	}
 }
 
 .header__links {
@@ -8,6 +40,14 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 45px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 85px;
+	}
+
+	@media (min-width: 1200px) {
+		align-items: start;
+	}
 }
 
 .header__logo {
@@ -20,6 +60,16 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+
+	@media (min-width: 768px) {
+		width: 80px;
+		height: 80px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 110px;
+		height: 110px;
+	}
 }
 
 .header__menu-btn {
@@ -29,6 +79,10 @@
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
 }
 
 .header__menu-icon {
@@ -48,6 +102,14 @@
 	line-height: 1;
 	font-weight: 700;
 	color: #fff;
+
+	@media (min-width: 768px) {
+		font-size: 65px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 85px;
+	}
 }
 
 .header__text-about {
@@ -55,21 +117,43 @@
 	font-family: 'open_sans', sans-serif;
 	font-size: 14px;
 	color: #fff;
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 20px;
+	}
 }
 
 .header__btns {
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
+	width: 280px;
+
+	@media (min-width: 768px) {
+		width: auto;
+	}
+
+	@media (min-width: 1200px) {
+		justify-content: start;
+	}
 }
 
 .header__link-store {
 	text-decoration: none;
+	text-align: center;
 	transition: color 0.1s ease-in, background-color 0.1s ease-in;
 
 	&:hover {
 		background-color: #fff;
 		color: #000;
+	}
+
+	@media (min-width: 1200px) {
+		margin-left: 27px;
 	}
 }
 
@@ -86,6 +170,13 @@
 	&--opened {
 		display: block;
 	}
+
+	@media (min-width: 768px) {
+		position: static;
+		display: block;
+		padding: 0;
+		background-color: transparent;
+	}
 }
 
 .header__menu-btn-close {
@@ -96,6 +187,10 @@
 	height: 18px;
 	border: none;
 	background-color: transparent;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
 }
 
 .header__menu-btn-close-icon {
@@ -108,6 +203,10 @@
 	justify-content: center;
 	list-style: none;
 	margin-bottom: 30px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 0;
+	}
 }
 
 .header__socials-item + .header__socials-item {
@@ -122,6 +221,10 @@
 	width: 30px;
 	height: 30px;
 	fill: #000;
+
+	@media (min-width: 768px) {
+		fill: #fff;
+	}
 }
 
 .header__icon-twitter:hover {
@@ -140,10 +243,48 @@
 	fill: #0088cc;
 }
 
+.header__tel-btn-wrapper {
+	display: flex;
+	align-items: center;
+
+	@media (min-width: 768px) {
+		position: absolute;
+		top: 25px;
+		right: 30px;
+	}
+
+	@media (min-width: 1200px) {
+		top: 26px;
+	}
+}
+
 .header__menu-tel {
 	font-family: 'bebas', sans-serif;
-	font-size: 32px;
+	font-size: 30px;
 	font-weight: 700;
 	color: #000;
 	text-decoration: none;
+
+	@media (min-width: 768px) {
+		font-weight: 600;
+		line-height: 74px;
+		color: #fff;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 30px;
+		line-height: 30px;
+	}
+}
+
+.header__menu .btn {
+	display: none;
+	padding: 7px 22px;
+	font-size: 22px;
+	line-height: 1;
+
+	@media (min-width: 1200px) {
+		display: inline-block;
+		margin-left: 50px;
+	}
 }
