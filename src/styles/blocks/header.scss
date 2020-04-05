@@ -46,7 +46,7 @@
 	}
 
 	@media (min-width: 1200px) {
-		align-items: start;
+		align-items: flex-start;
 	}
 }
 
@@ -138,7 +138,7 @@
 	}
 
 	@media (min-width: 1200px) {
-		justify-content: start;
+		justify-content: flex-start;
 	}
 }
 

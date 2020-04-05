@@ -138,6 +138,12 @@ body.blocked {
 	&--white {
 		color: #fff;
 	}
+
+	@media (min-width: 768px) {
+		margin-bottom: 35px;
+		font-size: 45px;
+		line-height: 45px;
+	}
 }
 
 .subheading {
@@ -154,5 +160,16 @@ body.blocked {
 
 	&--white {
 		color: #fff;
+	}
+
+	@media (min-width: 768px) {
+		margin-bottom: 35px;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 620px;
+		margin: 0 auto 90px;
 	}
 }

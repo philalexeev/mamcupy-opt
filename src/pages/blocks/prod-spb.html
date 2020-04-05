@@ -1,6 +1,6 @@
 <section class="prod-spb">
 	<div class="container">
-		<h2 class="heading heading--black">Швейное производство в Санкт-Петербурге</h2>
+		<h2 class="heading heading--black">Швейное производство<br>в Санкт-Петербурге</h2>
 		<p class="subheading subheading--grey">Мы можем произвести для вас партию любого мерча по нашим базовым лекалам. Для вас мы будем
 			использовать проверенные материалы, которые мы используем для производства изделий магазинчика "Мам, купи!".</p>
 		<img class="prod-spb__banner" src="img/main/30 products.png" alt="Минимальная партия 30 изделий">
@@ -54,11 +54,13 @@
 				}'></include>
 			</li>
 		</ul>
-		<include src="src/pages/components/button-request.html" locals='{
+		<div class="prod-spb__btn-warning-wrapper">
+			<include src="src/pages/components/button-request.html" locals='{
 				"color": "black",
 				"iconname": "flame",
 				"text": "Оформить заявку"
 			}'></include>
-		<p class="prod-spb__bottom-warning">На странице представлены не все изделия, чтобы узнать подробности - оформите заявку</p>
+			<p class="prod-spb__bottom-warning">На странице представлены не все изделия, чтобы узнать подробности - оформите
+				заявку</p></div>
 	</div>
 </section>
