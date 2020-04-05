@@ -7,6 +7,12 @@
 	}
 }
 
+.branding .container {
+	@media screen and (min-width: 768px) {
+		padding: 0;
+	}
+}
+
 .branding__inner {
 	position: relative;
 	padding: 45px 0 95px;

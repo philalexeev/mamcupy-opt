@@ -1,6 +1,9 @@
 <section class="fullfilment">
 	<h2 class="heading heading--black">Фулфилмент</h2>
-	<img class="fullfillment__bg-image" src="img/main/fullfilment_bg.png" alt="Зарыковская Дарья">
+	<picture>
+		<source media="(min-width: 1200px)" srcset="img/main/fulfilment.png">
+		<img class="fullfillment__bg-image" src="img/main/fullfilment_bg1.png" alt="Зарыковская Дарья">
+	</picture>
 	<div class="container">
 		<p class="fullfilment__details">Мы можем не только произвести ваш мерч, но и взять на себя весь цикл работ интернет-магазина. Вот, что мы можем:</p>
 		<ul class="fullfilment__details-list">
@@ -15,11 +18,13 @@
 			<li class="fullfilment__details-list-item">Вести бухгалтерию.</li>
 		</ul>
 		<p class="fullfilment__details">В случае, если мы разрабатываем для вас дизайн, производим мерч и берем на себя фулфилмент, вы получаете готовый бизнес, которому недостает только хорошей рекламы.</p>
-		<include src="src/pages/components/button-request.html" locals='{
+		<div class="fullfilment__btn-warning-wrapper">
+			<include src="src/pages/components/button-request.html" locals='{
 				"color": "black",
 				"iconname": "flame",
 				"text": "Да, я хочу"
 			}'></include>
-		<p class="fullfilment__bottom-warning">Стоимость этих услуг обсуждается индивидуально, просто напишите нам.</p>
+			<p class="fullfilment__bottom-warning">Стоимость этих услуг обсуждается индивидуально, просто напишите нам.</p>
+		</div>
 	</div>
 </section>
