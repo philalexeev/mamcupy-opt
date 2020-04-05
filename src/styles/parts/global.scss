@@ -144,6 +144,11 @@ body.blocked {
 		font-size: 45px;
 		line-height: 45px;
 	}
+
+	@media (min-width: 1200px) {
+		font-size: 55px;
+		line-height: 55px;
+	}
 }
 
 .subheading {
