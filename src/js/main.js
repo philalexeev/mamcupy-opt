@@ -189,7 +189,7 @@ window.onload = () => {
 
 				switch (caseName) {
 					case 'kashin':
-						href = 'https://mamcupy.com/catalog/mamcupy/khudi-litsemer-chernoe-/?sphrase_id=473549';
+						href = '';
 						text = 'Кашин';
 						break;
 					case 'mozee':
@@ -254,8 +254,12 @@ window.onload = () => {
 						break;
 				}
 
-				popupCasesLabel.href = href;
-				popupCasesLabel.text = text;
+				if ( text === 'Кашин' ) {
+					popupCasesLabel.text = text;
+				} else {
+					popupCasesLabel.href = href;
+					popupCasesLabel.text = text;
+				}
 
 				document.body.classList.add('blocked');
 				popupLayout.style.display = 'block';
