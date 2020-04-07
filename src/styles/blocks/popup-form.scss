@@ -31,10 +31,36 @@
 .popup-form .form__textarea {
 	color: #000;
 	border-color: #000;
+
+	@media screen and (min-width: 768px) {
+		margin-bottom: 20px;
+		font-size: 17px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		padding: 15px;
+	}
+}
+
+.popup-form .form__input-wrapper {
+	@media screen and (min-width: 1200px) {
+		padding: 0;
+	}
 }
 
 .popup-form .form__input-telephone {
 	color: #000;
+	font-size: 14px;
+	line-height: 1;
+
+	@media screen and (min-width: 768px) {
+		font-size: 17px;
+		padding: 15px;
+	}
+}
+
+.popup-form .form__textarea {
+	margin-bottom: 10px;
 }
 
 .popup-form .form__error-field {
@@ -56,6 +82,11 @@
 
 .popup-form .form__checkbox-label {
 	color: #000;
+
+	@media screen and (min-width: 1200px) {
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
 }
 
 .popup-form .form__checkbox-label::after {
@@ -75,6 +106,12 @@
 	background-position: center;
 	background-size: contain;
 	z-index: 2;
+}
+
+.popup-form .btn {
+	@media screen and (min-width: 1200px) {
+		margin: 0 auto 15px;
+	}
 }
 
 .popup-form .form__checkbox-label--error {

@@ -25,6 +25,12 @@ body.blocked {
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.8);
 	overflow-y: scroll;
+
+	@media screen and (min-width: 768px) {
+		right: auto;
+		width: 100%;
+		padding: 0 30px;
+	}
 }
 
 ::placeholder {

@@ -83,6 +83,7 @@ window.onload = () => {
 		const popupProducts = document.querySelector('.popup-products');
 		const productsLinks = document.querySelectorAll('.prod-spb__products-link');
 		const productsBtnClose = document.querySelector('.popup-products__btn-close');
+		let productsLabel = document.querySelector('.popup-products__label');
 		let productType;
 		let productList;
 
@@ -92,6 +93,39 @@ window.onload = () => {
 
 				productType = link.dataset.product;
 				productList = document.querySelector(`.popup-products__list[data-list=${productType}]`);
+
+				let href = '';
+				let text = '';
+
+				switch (productType) {
+					case 'sweetshot':
+						href = 'https://mamcupy.com/catalog/svitshoty/';
+						text = 'Свитшоты';
+						break;
+					case 'shirt':
+						href = 'https://mamcupy.com/catalog/futbolki/';
+						text = 'Футболки';
+						break;
+					case 'hoodie':
+						href = 'https://mamcupy.com/catalog/khudi/';
+						text = 'Худи';
+						break;
+					case 'shopper':
+						href = 'https://mamcupy.com/catalog/shoppery/';
+						text = 'Шоппер';
+						break;
+					case 'bag':
+						href = 'https://mamcupy.com/catalog/sumki/';
+						text = 'Поясная сумка';
+						break;
+					case 'suvenirka':
+						href = 'https://mamcupy.com/catalog/aksessuary/';
+						text = 'Сувенирка';
+						break;
+				}
+
+				productsLabel.textContent = text;
+				productsLabel.href = href;
 
 				document.body.classList.add('blocked');
 				popupLayout.style.display = 'block';
@@ -149,6 +183,80 @@ window.onload = () => {
 
 				popupLayout = document.querySelector('.popup-wrap');
 				popupCases = document.querySelector('.popup-cases');
+				const popupCasesLabel = document.querySelector('.popup-cases__label');
+
+				let href = '';
+				let text = '';
+
+				switch (caseName) {
+					case 'kashin':
+						href = 'https://mamcupy.com/catalog/mamcupy/khudi-litsemer-chernoe-/?sphrase_id=473549';
+						text = 'Кашин';
+						break;
+					case 'mozee':
+						href = 'https://mamcupy.com/catalog/MOZI_MONTANA/';
+						text = 'Mozee Montana';
+						break;
+					case 'alisher':
+						href = 'https://mamcupy.com/catalog/MORGENSHTERN_853/';
+						text = 'Алишер Моргенштерн';
+						break;
+					case 'lizzka':
+						href = 'https://mamcupy.com/catalog/lizzka/';
+						text = 'l1zzka';
+						break;
+					case 'sqwozbab':
+						href = 'https://mamcupy.com/catalog/sqwoz-bab/';
+						text = 'Sqwoz bab';
+						break;
+					case 'kfc':
+						href = 'https://mamcupy.com/catalog/kfc-panama-basket/';
+						text = 'KFC';
+						break;
+					case 'mukka':
+						href = 'https://mamcupy.com/catalog/mukka/';
+						text = 'Mukka';
+						break;
+					case 'booker':
+						href = 'https://mamcupy.com/catalog/booker/';
+						text = 'Booker';
+						break;
+					case 'monetochka':
+						href = 'https://mamcupy.com/catalog/monetochka-1241/';
+						text = 'Лиза Монеточка';
+						break;
+					case 'anastasiz':
+						href = 'https://mamcupy.com/catalog/anastasiz/';
+						text = 'Анастасиз';
+						break;
+					case 'asya':
+						href = 'https://mamcupy.com/catalog/ASINASTRA/';
+						text = 'Асинастра';
+						break;
+					case 'karamba':
+						href = 'https://mamcupy.com/catalog/karrambaby/';
+						text = 'Каррамбейби';
+						break;
+					case 'mamcupy':
+						href = 'https://mamcupy.com/catalog/mamkupy/';
+						text = 'Мам, купи!';
+						break;
+					case 'sover':
+						href = 'https://mamcupy.com/catalog/sovergon/';
+						text = 'Совергон';
+						break;
+					case 'sveta':
+						href = 'https://mamcupy.com/catalog/deydrimer/';
+						text = 'Дейдример';
+						break;
+					case 'sviter':
+						href = 'https://mamcupy.com/catalog/vyazanye-veshchi/';
+						text = 'Коллекция вязаных вещей 2019';
+						break;
+				}
+
+				popupCasesLabel.href = href;
+				popupCasesLabel.text = text;
 
 				document.body.classList.add('blocked');
 				popupLayout.style.display = 'block';
