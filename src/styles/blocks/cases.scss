@@ -31,6 +31,31 @@
 	}
 }
 
+.cases-item__hover-block {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	padding: 12px 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.cases-item__hover-block-text {
+	display: inline-block;
+	padding: 0 20px;
+	font-family: 'bebas', sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 36px;
+	color: #fff;
+	border: 2px solid #fff;
+}
+
 .cases__item:nth-child(n + 10) {
 	display: none;
 
@@ -53,6 +78,13 @@
 
 	@media screen and (min-width: 768px) {
 		padding: 0;
+	}
+
+	@media screen and (min-width: 1200px) {
+		&:hover .cases-item__hover-block {
+			opacity: 1;
+			z-index: 2;
+		}
 	}
 }
 

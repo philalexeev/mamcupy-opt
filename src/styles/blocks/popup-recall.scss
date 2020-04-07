@@ -1,0 +1,139 @@
+.popup-recall {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	width: 280px;
+	padding: 55px 0 40px;
+	background-color: #fff;
+	box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+	text-align: center;
+	opacity: 0;
+	z-index: 100;
+	transition: all 0.5s ease-in-out;
+
+	@media screen and (min-width: 768px) {
+		width: 540px;
+		padding: 60px 0 55px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 580px;
+	}
+}
+
+.popup-recall--visible {
+	display: block;
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-recall__btn-close {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	width: 14px;
+	height: 14px;
+	border: none;
+	font-size: 0;
+	background-color: transparent;
+
+	@media screen and (min-width: 768px) {
+		width: 17px;
+		height: 17px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		top: 20px;
+		right: 20px;
+	}
+}
+
+.popup-recall__btn-close-icon {
+	width: 14px;
+	height: 14px;
+	fill: #000;
+
+	@media screen and (min-width: 768px) {
+		width: 17px;
+		height: 17px;
+	}
+}
+
+.popup-recall .subheading {
+	width: 100%;
+	font-size: 14px;
+
+	@media screen and (min-width: 768px) {
+		font-size: 20px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		margin-bottom: 35px;
+	}
+}
+
+.popup-recall__phone-wrapper {
+	position: relative;
+	padding: 0;
+	margin-bottom: 15px;
+	font-family: 'open_sans', sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 600;
+	color: #000;
+	border: 2px solid #000;
+	background-color: transparent;
+
+	@media screen and (min-width: 768px) {
+		font-size: 17px;
+		margin-bottom: 30px;
+	}
+
+	@media screen and (min-width: 1200px) {
+		width: 400px;
+		margin: 0 auto 30px;
+	}
+}
+
+.popup-recall__phone-wrapper::before {
+	content: '+7';
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	margin-top: -1px;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 600;
+
+	@media screen and (min-width: 768px) {
+		font-size: 17px;
+		margin-top: 0;
+	}
+
+	@media screen and (min-width: 1200px) {
+		left: 20px;
+	}
+}
+
+.popup-recall__phone {
+	width: 100%;
+	padding: 10px 10px 10px 30px;
+	border: none;
+	background-color: transparent;
+	font-family: 'open_sans', sans-serif;
+	font-size: 14px;
+	line-height: 23px;
+	font-weight: 600;
+	color: #000;
+
+	@media screen and (min-width: 768px) {
+		font-size: 17px;
+		font-weight: 600;
+	}
+
+	@media screen and (min-width: 1200px) {
+		padding-left: 45px;
+	}
+}

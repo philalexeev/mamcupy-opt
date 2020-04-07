@@ -56,7 +56,6 @@ window.onload = () => {
 		const popupForm = document.querySelector('.popup-form');
 		const btnClosePopupForm = document.querySelector('.popup-form__btn-close');
 
-
 		for (let btn of btnsForm) {
 			btn.addEventListener('click', () => {
 				document.body.classList.add('blocked');
@@ -444,6 +443,19 @@ window.onload = () => {
 			})
 		}
 
+	})();
+
+	(function recallPopup() {
+		const popupRecall = document.querySelector('.popup-recall');
+		const popupRecallBtnClose = popupRecall.querySelector('.popup-recall__btn-close');
+
+		setTimeout(() => {
+			popupRecall.classList.add('popup-recall--visible');
+		}, 300000);
+
+		popupRecallBtnClose.addEventListener('click', () => {
+			popupRecall.classList.remove('popup-recall--visible');
+		})
 	})();
 };
 
