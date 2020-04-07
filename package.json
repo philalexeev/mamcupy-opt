@@ -26,6 +26,7 @@
     "gulp-cheerio-clean-svg": "github:Hiswe/gulp-cheerio-clean-svg",
     "gulp-csso": "^4.0.1",
     "gulp-html-prettify": "0.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-inject": "^5.0.5",

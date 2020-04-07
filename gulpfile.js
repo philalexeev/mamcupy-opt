@@ -25,6 +25,7 @@ const cleanSvg   = require('gulp-cheerio-clean-svg');
 const replace = require('gulp-replace');
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
+const htmlmin = require('gulp-htmlmin');
 
 let isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -63,6 +64,7 @@ function html() {
 			.pipe(inject(svgs, { transform: fileContents }))
 			.pipe(posthtml([include()]))
 			.pipe(gulpIf(isDev, prettify({ indent_char: '	', indent_size: 1 })))
+			.pipe(gulpIf(!isDev, htmlmin({ collapseWhitespace: true })))
 			.pipe(dest('build/'));
 }
 
@@ -147,6 +149,11 @@ function copy() {
     .pipe(dest('build'));
 }
 
+function copyPhp() {
+	return src('src/php/*.php')
+		.pipe(dest('build'));
+}
+
 function server() {
   browserSync.init({
     server: {
@@ -171,6 +178,7 @@ function refreshPage(done) {
 
 function build(done) {
 	copyImg();
+	copyPhp();
 	html();
   copy();
   js();
