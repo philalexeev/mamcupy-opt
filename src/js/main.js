@@ -450,7 +450,7 @@ window.onload = () => {
 				checkForm(event, formElem);
 			};
 
-			formElem.querySelector('button[type="submit"]').addEventListener('click', (event) => {
+			formElem.querySelector('button[type="button"]').addEventListener('click', (event) => {
 				checkForm(event, formElem);
 			})
 		}
