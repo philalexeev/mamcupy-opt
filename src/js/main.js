@@ -256,6 +256,7 @@ window.onload = () => {
 
 				if ( text === 'Кашин' ) {
 					popupCasesLabel.text = text;
+					popupCasesLabel.removeAttribute('href');
 				} else {
 					popupCasesLabel.href = href;
 					popupCasesLabel.text = text;
@@ -400,6 +401,13 @@ window.onload = () => {
 		}
 
 		if ( sendState ) {
+			$.post('../send.php', {
+				name: nameInput.value.trim(),
+				email: emailInput.value,
+				phone: phoneNumber,
+				service: selectValue.textContent,
+				message: textarea.value
+			});
 			return true
 		} else {
 			errorMsg.classList.add('form__error--visible');
