@@ -449,18 +449,35 @@ window.onload = () => {
 		const popupRecall = document.querySelector('.popup-recall');
 		const popupRecallBtn = document.querySelector('.popup-recall .btn__request');
 		const popupRecallBtnClose = popupRecall.querySelector('.popup-recall__btn-close');
+		const phoneInput = popupRecall.querySelector('.form__input-telephone');
+		const errorMsg = popupRecall.querySelector('.popup-recall__error');
 
 		setTimeout(() => {
 			popupRecall.classList.add('popup-recall--visible');
 		}, 300000);
 
+		phoneInput.oninput = () => {
+			phoneInput.parentElement.classList.remove('form__error-field');
+			errorMsg.style.visibility = 'hidden';
+		}
+
 		function sendRecall() {
-			const phoneInput = popupRecall.querySelector('.form__input-telephone');
 			const phoneNumber = '+7' + phoneInput.value.replace(/-/g, '');
+			const phoneRegExp = /^((\+7|7|8)+([0-9]){10})$/gm;
+
+			if ( !phoneRegExp.test(phoneNumber)) {
+				phoneInput.parentElement.classList.add('form__error-field');
+				errorMsg.style.visibility = 'visible';
+				return false;
+			} else if ( phoneInput.parentElement.classList.contains('form__error-field') ) {
+				phoneInput.parentElement.classList.remove('form__error-field')
+			}
 
 			$.post('../sendrecall.php', {
 				phone: phoneNumber
 			});
+			popupRecall.classList.remove('popup-recall--visible');
+			document.querySelector('.sendsuccess').classList.add('sendsuccess--visible');
 		}
 
 		popupRecallBtn.onclick = sendRecall;

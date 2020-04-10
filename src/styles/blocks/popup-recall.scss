@@ -137,3 +137,19 @@
 		padding-left: 45px;
 	}
 }
+
+.popup-recall .btn {
+	margin-bottom: 20px;
+}
+
+.form__error-field {
+	border-color: #f00;
+}
+
+.popup-recall__error {
+	font-family: 'open_sans', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	color: #f00;
+	visibility: hidden;
+}
