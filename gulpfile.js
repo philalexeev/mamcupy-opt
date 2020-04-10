@@ -64,7 +64,10 @@ function html() {
 			.pipe(inject(svgs, { transform: fileContents }))
 			.pipe(posthtml([include()]))
 			.pipe(gulpIf(isDev, prettify({ indent_char: '	', indent_size: 1 })))
-			.pipe(gulpIf(!isDev, htmlmin({ collapseWhitespace: true })))
+			.pipe(gulpIf(!isDev, htmlmin({
+				collapseWhitespace: true,
+				removeComments: true
+			})))
 			.pipe(dest('build/'));
 }
 

@@ -10,10 +10,11 @@
 		<div class="popup-recall__phone-wrapper">
 			<input class="popup-recall__phone form__input-telephone" type="tel">
 		</div>
-		<include src="src/pages/components/button-request.html" locals='{
-			"color": "black",
-			"iconname": "flame",
-			"text": "Отправить"
-		}'></include>
+		<button class="btn btn__request btn__request--black">
+			<svg class="btn__request-icon">
+				<use xlink:href="#flame"></use>
+			</svg>
+			<span class="btn__request-text">Отправить</span>
+		</button>
 	</div>
 </div>

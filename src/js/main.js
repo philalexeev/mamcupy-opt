@@ -93,38 +93,30 @@ window.onload = () => {
 				productType = link.dataset.product;
 				productList = document.querySelector(`.popup-products__list[data-list=${productType}]`);
 
-				let href = '';
 				let text = '';
 
 				switch (productType) {
 					case 'sweetshot':
-						href = 'https://mamcupy.com/catalog/svitshoty/';
 						text = 'Свитшоты';
 						break;
 					case 'shirt':
-						href = 'https://mamcupy.com/catalog/futbolki/';
 						text = 'Футболки';
 						break;
 					case 'hoodie':
-						href = 'https://mamcupy.com/catalog/khudi/';
 						text = 'Худи';
 						break;
 					case 'shopper':
-						href = 'https://mamcupy.com/catalog/shoppery/';
 						text = 'Шоппер';
 						break;
 					case 'bag':
-						href = 'https://mamcupy.com/catalog/sumki/';
 						text = 'Поясная сумка';
 						break;
 					case 'suvenirka':
-						href = 'https://mamcupy.com/catalog/aksessuary/';
 						text = 'Сувенирка';
 						break;
 				}
 
 				productsLabel.textContent = text;
-				productsLabel.href = href;
 
 				document.body.classList.add('blocked');
 				popupLayout.style.display = 'block';
@@ -143,6 +135,7 @@ window.onload = () => {
 		const btnClosePopupProducts = document.querySelector('.popup-products__btn-close');
 
 		btnClosePopupProducts.addEventListener('click', () => {
+			popupLayout.scrollTo(0, 0);
 			document.body.classList.remove('blocked');
 			popupLayout.style.display = 'none';
 			popupProducts.style.display = 'none';
@@ -184,83 +177,60 @@ window.onload = () => {
 				popupCases = document.querySelector('.popup-cases');
 				const popupCasesLabel = document.querySelector('.popup-cases__label');
 
-				let href = '';
 				let text = '';
 
 				switch (caseName) {
 					case 'kashin':
-						href = '';
 						text = 'Кашин';
 						break;
 					case 'mozee':
-						href = 'https://mamcupy.com/catalog/MOZI_MONTANA/';
 						text = 'Mozee Montana';
 						break;
 					case 'alisher':
-						href = 'https://mamcupy.com/catalog/MORGENSHTERN_853/';
 						text = 'Алишер Моргенштерн';
 						break;
 					case 'lizzka':
-						href = 'https://mamcupy.com/catalog/lizzka/';
 						text = 'l1zzka';
 						break;
 					case 'sqwozbab':
-						href = 'https://mamcupy.com/catalog/sqwoz-bab/';
 						text = 'Sqwoz bab';
 						break;
 					case 'kfc':
-						href = 'https://mamcupy.com/catalog/kfc-panama-basket/';
 						text = 'KFC';
 						break;
 					case 'mukka':
-						href = 'https://mamcupy.com/catalog/mukka/';
-						text = 'Mukka';
+						text = 'Мукка';
 						break;
 					case 'booker':
-						href = 'https://mamcupy.com/catalog/booker/';
 						text = 'Booker';
 						break;
 					case 'monetochka':
-						href = 'https://mamcupy.com/catalog/monetochka-1241/';
 						text = 'Лиза Монеточка';
 						break;
 					case 'anastasiz':
-						href = 'https://mamcupy.com/catalog/anastasiz/';
 						text = 'Анастасиз';
 						break;
 					case 'asya':
-						href = 'https://mamcupy.com/catalog/ASINASTRA/';
 						text = 'Асинастра';
 						break;
 					case 'karamba':
-						href = 'https://mamcupy.com/catalog/karrambaby/';
 						text = 'Каррамбейби';
 						break;
 					case 'mamcupy':
-						href = 'https://mamcupy.com/catalog/mamkupy/';
 						text = 'Мам, купи!';
 						break;
 					case 'sover':
-						href = 'https://mamcupy.com/catalog/sovergon/';
 						text = 'Совергон';
 						break;
 					case 'sveta':
-						href = 'https://mamcupy.com/catalog/deydrimer/';
 						text = 'Дейдример';
 						break;
 					case 'sviter':
-						href = 'https://mamcupy.com/catalog/vyazanye-veshchi/';
 						text = 'Коллекция вязаных вещей 2019';
 						break;
 				}
 
-				if ( text === 'Кашин' ) {
-					popupCasesLabel.text = text;
-					popupCasesLabel.removeAttribute('href');
-				} else {
-					popupCasesLabel.href = href;
-					popupCasesLabel.text = text;
-				}
+				popupCasesLabel.textContent = text;
 
 				document.body.classList.add('blocked');
 				popupLayout.style.display = 'block';
@@ -296,7 +266,7 @@ window.onload = () => {
 
 		showMoreBtn.addEventListener('click', () => {
 			let i = 0;
-			while ( i < 3 ) {
+			while ( i < 4 ) {
 				hiddenCases[0].style.display = 'block';
 				hiddenCases.shift();
 
@@ -408,6 +378,14 @@ window.onload = () => {
 				service: selectValue.textContent,
 				message: textarea.value
 			});
+			nameInput.value = '';
+			emailInput.value = '';
+			phoneInput.value = '';
+			selectValue.dataset.activeoption = '0';
+			selectValue.textContent = 'Выберите услугу';
+			textarea.value = '';
+			checkBox.checked = false;
+			showSendSuccess(form);
 			return true
 		} else {
 			errorMsg.classList.add('form__error--visible');
@@ -417,21 +395,35 @@ window.onload = () => {
 	};
 
 	(function inputChange() {
-		const inputFields = document.querySelectorAll('.form__input-name, .form__input-email, .form__input-telephone, .form__textarea');
-		const checkboxFields = document.querySelectorAll('.form__checkbox');
 
-		for ( let inputItem of inputFields ) {
-			inputItem.oninput = () => {
-				if ( inputItem.closest('.form__error-field') ) {
-					inputItem.closest('.form__error-field').classList.remove('form__error-field');
+		const formList = document.forms;
+
+		for ( let form of formList ) {
+			const inputFields = form.querySelectorAll('.form__input-name, .form__input-email, .form__input-telephone, .form__textarea');
+			const checkboxFields = form.querySelectorAll('.form__checkbox');
+			const errorMsg = form.querySelector('.form__error');
+
+			for ( let inputItem of inputFields ) {
+				inputItem.oninput = () => {
+					if ( inputItem.closest('.form__error-field') ) {
+						inputItem.closest('.form__error-field').classList.remove('form__error-field');
+					}
+
+					if ( errorMsg.classList.contains('form__error--visible') ) {
+						errorMsg.classList.remove('form__error--visible');
+					}
 				}
 			}
-		}
 
-		for ( let checkbox of checkboxFields ) {
-			checkbox.onchange = () => {
-				if ( checkbox.nextElementSibling.classList.contains('form__checkbox-label--error') ) {
-					checkbox.nextElementSibling.classList.remove('form__checkbox-label--error');
+			for ( let checkbox of checkboxFields ) {
+				checkbox.onchange = () => {
+					if ( checkbox.nextElementSibling.classList.contains('form__checkbox-label--error') ) {
+						checkbox.nextElementSibling.classList.remove('form__checkbox-label--error');
+					}
+
+					if ( errorMsg.classList.contains('form__error--visible') ) {
+						errorMsg.classList.remove('form__error--visible');
+					}
 				}
 			}
 		}
@@ -442,10 +434,6 @@ window.onload = () => {
 		const formList = document.forms;
 
 		for ( let formElem of formList ) {
-			// formElem.addEventListener('submit', (event) => {
-			// 	console.log(1);
-			// 	checkForm(event, formElem);
-			// }, false);
 			formElem.submit = (event) => {
 				checkForm(event, formElem);
 			};
@@ -459,16 +447,46 @@ window.onload = () => {
 
 	(function recallPopup() {
 		const popupRecall = document.querySelector('.popup-recall');
+		const popupRecallBtn = document.querySelector('.popup-recall .btn__request');
 		const popupRecallBtnClose = popupRecall.querySelector('.popup-recall__btn-close');
 
 		setTimeout(() => {
 			popupRecall.classList.add('popup-recall--visible');
 		}, 300000);
 
+		function sendRecall() {
+			const phoneInput = popupRecall.querySelector('.form__input-telephone');
+			const phoneNumber = '+7' + phoneInput.value.replace(/-/g, '');
+
+			$.post('../sendrecall.php', {
+				phone: phoneNumber
+			});
+		}
+
+		popupRecallBtn.onclick = sendRecall;
+
 		popupRecallBtnClose.addEventListener('click', () => {
 			popupRecall.classList.remove('popup-recall--visible');
 		})
 	})();
+
+	(function sendsuccess() {
+		const sendsuccess = document.querySelector('.sendsuccess');
+		const sendsuccessBtnClose = document.querySelector('.sendsuccess__btn-close');
+
+		sendsuccessBtnClose.addEventListener('click', () => {
+			sendsuccess.classList.remove('sendsuccess--visible');
+		})
+	})();
+
+	function showSendSuccess(form) {
+		if ( !form.closest('.form-section') ) {
+			document.body.classList.remove('blocked');
+			form.closest('.popup-form').style.display = 'none';
+			form.closest('.popup-wrap').style.display = 'none';
+		}
+		document.querySelector('.sendsuccess').classList.add('sendsuccess--visible');
+	}
 };
 
 
